@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build": "gulp",
-    "build:dll": "webpack --config build/webpack.dll.conf.js",
     "dev": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --progress --config build/webpack.dev.conf.js"
   },
   "dependencies": {
@@ -60,7 +59,7 @@
     "webpack-merge": "^4.1.4"
   },
   "engines": {
-    "node": ">= 8.11.1",
+    "node": ">=8.11.1 <=11.15.0",
     "npm": ">= 5.6.0"
   }
 }
