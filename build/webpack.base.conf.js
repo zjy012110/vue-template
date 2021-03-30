@@ -6,23 +6,6 @@ const vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
-const vueMarkdown = {
-  preprocess: (MarkdownIt, source) => {
-    MarkdownIt.renderer.rules.table_open = function () {
-      return '<table class="table">'
-    }
-    MarkdownIt.renderer.rules.fence = utils.wrapCustomClass(MarkdownIt.renderer.rules.fence)
-    const code_inline = MarkdownIt.renderer.rules.code_inline
-    MarkdownIt.renderer.rules.code_inline = function (...args) {
-      args[0][args[1]].attrJoin('class', 'code_inline')
-      return code_inline(...args)
-    }
-    return source
-  },
-  use: [
-
-  ]
-}
 
 const createLintingRule = () => ({
   test: /\.(js|vue)$/,
@@ -97,11 +80,6 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },
-      {
-        test: /\.md$/,
-        loader: 'vue-markdown-loader',
-        options: vueMarkdown
       }
 
     ]
