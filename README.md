@@ -56,5 +56,5 @@ static/config/index.js更改api接口请求地址
       └─index.js  
 ```  
 **版本支持**  
-node < 11  
-*当前打包工具gulpfile引入版本为3.9，最高只支持node11，使用更高的node版本需自行升级gulpfile并重写gulpfile.js*
+node >= 12  
+*当前打包工具gulpfile引入版本为4.0，最低只支持node12，使用低node版本可使用master的gulp3.0版本*
